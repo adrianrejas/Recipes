@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/srl_refresh_layout">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/recipes_list_loading_layout"
+                layout="@layout/layout_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_outer_big"
+                android:orientation="vertical"/>
+
+            <include
+                android:id="@+id/recipes_list_error_layout"
+                layout="@layout/layout_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_outer_big"
+                android:orientation="vertical"/>
+
+            <include
+                android:id="@+id/recipes_list_no_elements_layout"
+                layout="@layout/layout_no_elements"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_outer_big"
+                android:orientation="vertical"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recipes_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/card_item_margin"
+                app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:context=".presentation.ui.activities.RecipesListActivity"
+                tools:listitem="@layout/item_recipe_details_list" />
+
+        </FrameLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</layout>

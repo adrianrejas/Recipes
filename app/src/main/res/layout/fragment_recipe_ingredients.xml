@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <import type="org.udacity.android.arejas.recipes.utils.Utils"/>
+        <variable
+            name="ingredients"
+            type="java.util.List&lt;String>" />
+        <variable
+            name="navigator"
+            type="org.udacity.android.arejas.recipes.presentation.ui.interfaces.NavigationInterface" />
+        <variable
+            name="nextDetailId"
+            type="Integer" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ingredients_loading_layout"
+            layout="@layout/layout_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_outer_big"
+            android:orientation="vertical"/>
+
+        <include
+            android:id="@+id/ingredients_error_layout"
+            layout="@layout/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_outer_big"
+            android:orientation="vertical"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/ingredients_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ScrollView
+                android:id="@+id/ingredients_scroll_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/margin_inner"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bt_ingredients_next">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_inner_big"
+                    android:layout_marginStart="@dimen/margin_inner_big">
+
+                    <TextView
+                        android:id="@+id/tv_ingredients_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_inner_big"
+                        android:textAlignment="center"
+                        style="@style/textTitle"
+                        android:singleLine="false"
+                        app:textUnderline="@{@string/ingredients}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Ingredients" />
+
+                    <TextView
+                        android:id="@+id/tv_ingredients_listed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_inner_huge"
+                        android:textAlignment="textStart"
+                        style="@style/textInfo"
+                        android:singleLine="false"
+                        app:textList="@{ingredients}"
+                        app:layout_constraintTop_toBottomOf="@id/tv_ingredients_title"
+                        tools:text="- First ingredient\n- Second ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient\n- Third ingredient" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/bt_ingredients_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_inner_big"
+                android:layout_marginBottom="@dimen/margin_inner_big"
+                style="@style/button"
+                android:text="@string/next"
+                app:layout_constraintTop_toBottomOf="@id/ingredients_scroll_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="@{() -> navigator.onLoadFragment(nextDetailId)}"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

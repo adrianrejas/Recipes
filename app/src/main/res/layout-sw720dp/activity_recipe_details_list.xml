@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <include
+            android:id="@+id/recipe_details_list_loading_layout"
+            layout="@layout/layout_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_outer_big"
+            android:orientation="vertical"/>
+
+        <include
+            android:id="@+id/recipe_details_list_error_layout"
+            layout="@layout/layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_outer_big"
+            android:orientation="vertical"/>
+
+        <include
+            android:id="@+id/recipe_details_list_no_elements_layout"
+            layout="@layout/layout_no_elements"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_outer_big"
+            android:orientation="vertical"/>
+
+        <!--This layout is a two-pane layout for the Recipesaster/detail flow.-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            tools:context=".presentation.ui.activities.RecipeDetailsListActivity">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recipe_details_list"
+                android:name="org.udacity.android.arejas.recipes.ui.RecipeListFragment"
+                android:layout_width="@dimen/details_list_panel_width"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_partial_screen_border_right_background"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:context=".presentation.ui.activities.RecipeDetailsListActivity"
+                tools:listitem="@layout/item_recipe_details_list" />
+
+            <FrameLayout
+                android:id="@+id/recipe_detail_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:ignore="InconsistentLayout" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

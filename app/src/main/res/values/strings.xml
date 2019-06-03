@@ -1,0 +1,63 @@
+<resources>
+    <!-- Constants -->
+    <string name="base_url_default_recipes">https://d17h27t6h515a5.cloudfront.net/topher/2017/May/59121517_baking/</string>
+    <string name="file_url_default_recipes">baking.json</string>
+
+    <!-- General strings -->
+    <string name="app_name">Recipes</string>
+    <string name="title_recipes_list">Recipes</string>
+    <string name="title_recipe_details_list">Recipe Details</string>
+    <string name="title_recipe_detail_info">Recipe detail info</string>
+    <string name="title_recipe_step">Recipe Step</string>
+    <string name="title_recipe_ingredients">Recipe Ingredients</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- General strings related to layouts -->
+    <string name="loading_data">Loading data …</string>
+
+    <!-- Recipes list strings -->
+    <string name="text_ingredients">Ingredients</string>
+    <string name="no_recipes_in_list">There are no recipes stored</string>
+    <string name="no_recipes_title">No recipes</string>
+    <string name="request_default_recipes">There are no recipes stored. Do you want to load from network a set of default recipes?</string>
+
+    <!-- Recipes details strings -->
+    <string name="ingredients_list">List of ingredients</string>
+    <string name="unknown_step">Unknown step</string>
+
+    <!-- Recipes detail info general strings -->
+    <string name="previous">Prev</string>
+    <string name="next">Next</string>
+    <string name="no_preview">No preview available</string>
+
+    <!-- Recipes ingredients fragment strings -->
+    <string name="ingredients">Ingredients</string>
+    <string name="no_ingredients">No ingredients specified.</string>
+
+    <!-- Content descriptions -->
+    <string name="error_content_description">Error of the operation</string>
+    <string name="image_content_description">Image representing the recipe</string>
+    <string name="serving_content_description">Number of people this recipe is designed for</string>
+    <string name="recipe_content_description">Name of the recipe</string>
+    <string name="step_content_description">Step to make for preparing the recipe</string>
+    <string name="ingredients_content_description">List of ingredients of the recipe</string>
+    <string name="thumbnail_content_description">Thumbnail image</string>
+
+    <!-- Common errors -->
+    <string name="no_recipe">No recipe name</string>
+    <string name="no_servings">Not specified</string>
+    <string name="error_no_web">Web not available</string>
+    <string name="error_data">There was an error loading requested data.</string>
+    <string name="error_connection">There was an error connecting with the server.</string>
+    <string name="error_ui">Unable to load interface.</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <!-- Widget -->
+    <string name="unknown_recipe">Unknown recipe</string>
+
+    <!-- preferences -->
+    <string name="preference_recipe_id_for_widget">recipe_id_for_widget_id_%d</string>
+
+</resources>

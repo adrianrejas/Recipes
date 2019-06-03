@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="details_list_panel_width">200dp</dimen>
+    <dimen name="icon_size">200dp</dimen>
+
+    <dimen name="margin_outer">12dp</dimen>
+    <dimen name="margin_outer_huge">32dp</dimen>
+    <dimen name="margin_outer_big">24dp</dimen>
+    <dimen name="margin_inner_big">16dp</dimen>
+    <dimen name="margin_inner_huge">24dp</dimen>
+    <dimen name="margin_inner">8dp</dimen>
+
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="text_size_general_info">18sp</dimen>
+    <dimen name="text_size_info">14sp</dimen>
+
+    <dimen name="card_item_corner_radius">5dp</dimen>
+    <dimen name="card_item_border">1dp</dimen>
+    <dimen name="card_item_margin">8dp</dimen>
+
+    <integer name="recipes_list_items_column">1</integer>
+
+</resources>

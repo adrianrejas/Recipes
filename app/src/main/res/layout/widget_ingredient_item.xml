@@ -1,0 +1,10 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_widget_item_text"
+    style="@style/textInfo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="false"
+    android:textAlignment="textStart"
+    android:textColor="@color/primaryTextColor"
+    tools:text="Ingredients" />
